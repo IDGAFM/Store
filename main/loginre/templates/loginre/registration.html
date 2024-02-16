@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+
+        <div class="authorization-form">
+            <form method="post" action="{% url 'register' %}">
+                <h1>Регистрация</h1>
+                <p class="center" style="color: #999;">Личный кабинет AITU-shop позволит Вам управлять бонусами и получать персональные предложения.</p>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                <p>Уже есть аккаунт ? <a href="./authorization.html"> Войдите</a></p>
+                <input type="submit" value="Продолжить">
+                <p class="center min-width-80" style="color: #999;">или нажмите на кнопку ниже для быстрого входа с Google или 
+                    Facebook если активировали одну из этих функций ранее</p>
+                <div class="display-flex justify-center gap-50 social-networks-authorization">
+                    <a href="" id="google">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    {% endblock %}

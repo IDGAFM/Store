@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+
+        <div class="min-width-90 display-flex justify-center gap-50 side-bar-and-profile">
+
+            <aside class="side-bar">
+                <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Мой профиль</a>
+                <a href="{% url 'cart' %}"><i class="fa-solid fa-basket-shopping"></i> Моя корзина</a>
+                <a href="{% url 'settings' %}"><i class="fa-solid fa-basket-shopping"></i>Настройки</a>
+                <a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Выйти</a>
+
+            </aside>
+
+            <div class="display-grid one-type-tovary" >
+
+            <section class="private-dates">
+
+            <h1>Настройки профиля</h1>
+
+            <form id="profileForm" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="phoneField">Номер телефона:</label>
+                    <input id="phoneField" class="profile-input" type="text" value="{{ user_profile.phone }}" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="emailField">E-mail:</label>
+                    <input id="emailField" class="profile-input" type="text" value="{{ email }}" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="usernameField">Ваш никнейм:</label>
+                    <input id="usernameField" class="profile-input" type="text" value="{{ user.username }}" readonly>
+                </div>
+                <button id="editSaveButton" type="button" onclick="enableEditing()">Редактировать</button>
+                <button id="saveChangesButton" type="button" onclick="saveChanges()" style="display: none;">Сохранить</button>
+            </form>
+    </section>
+        </div>
+        </div>
+
+
+    {% endblock %}

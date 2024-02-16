@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+        <div class="display-flex justify-center filter-and-catalog">
+            <aside class="tovar-side-bar display-flex direction-column" id="mobilefilter">
+                <h1>Выберите Iphone</h1>
+                <p>Цена, тенге:</p>
+                <div class="display-flex price-difference">
+                    <form method="GET" action="{% url 'search2' %}">
+                        <input type="number" name="min_price" value="{{ min_price }}" placeholder="ОТ">
+                        <input type="number" name="max_price" value="{{ max_price }}" placeholder="ДО">
+                        <br>
+                        <button type="submit" style="display: none" >Search</button>
+                    </form>
+                </div>
+                <p>Цвет</p>
+                <div class="display-flex direction-column gap-15">
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="green" id="">
+                        <div class="color-choice" style="background-color: #465c45;"></div>
+                        <p>Зёленый</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="pink" id="">
+                        <div class="color-choice" style="background-color: #FADDD7;"></div>
+                        <p>Розовый</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="blue" id="">
+                        <div class="color-choice" style="background-color: #276787;"></div>
+                        <p>Синий</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="blue" id="">
+                        <div class="color-choice" style="background-color: #FAF6F2;"></div>
+                        <p>Сияющая звезда</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="blue" id="">
+                        <div class="color-choice" style="background-color: #232A31;"></div>
+                        <p>Темная ночь</p>
+                    </div>
+                </div>
+                <p>Внутренняя память</p>
+                <div class="display-flex direction-column gap-15">
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="green" id="" >
+                        <p>128 ГБ</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="pink" id="">
+                        <p>256 ГБ</p>
+                    </div>
+                    <div class="display-flex gap-15 checkbox align-items-center">
+                        <input type="checkbox" name="blue" id="">
+                        <p>512 ГБ</p>
+                    </div>
+                </div>
+            </aside>
+            <button class="mobile show-mobile-filter" id="showmobilefilter"><i class="fa-solid fa-arrow-down fa-lg" id="arrow"></i></button>
+            <section class="not-mobile">
+                <h1 style="font-weight: 100;">Iphone</h1>
+                <div class="display-grid one-type-tovary">
+
+                 {% if results %}
+                        {% for product in results %}
+
+                    <a href="{{ product.get_absolute_url }}">
+                        <div class="one-type-tovar center">
+                            <img src="{{ product.poster.url }}" alt="">
+                            <h3>{{ product.title }}</h3>
+                            <p>Артикул: M11111111</p>
+                            <div class="prices-in-card">
+                                <h2>{{ product.price }} ₸</h2>
+                            </div>
+                            <p class="rassrochka-in-card"><span style="color: #8E8E93;">от 3 до 60 мес   </span> от 10 987 ₸ /мес.</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                      {% else %}
+                            <p>Ничего не найдено</p>
+                    {% endif %}
+
+
+                 </section>
+        </div>
+        <div class="grid-img-right mt-4 text-right bg bg1 margin-top-bottom" >
+            {% include 'include/pagination.html' %}
+        </div>
+
+        <section class="mobile">
+            <div>
+                <h1 style="margin: 20px;">Iphone 13</h1>
+
+                <div class="display-flex align-items-center gap-15 justify-center">
+                {% for tovar in tovar %}
+
+                    <button class="tovar-scroll-btns" id="tovarscrollbtn1"><i class="fa-solid fa-arrow-left"></i></button>
+                    <div class="display-flex tovar-scroll" id="tovarscroll">
+                        <div class="tovar-mobile-in-scroll" id="targetElement">
+                            <img src="{{ tovar.poster.url }}" alt="">
+                            <h2>iPhone 13, 128 ГБ, Тёмная ночь</h2>
+                            <p>Артикул: M11111111</p>
+                            <h3>449 990 ₸</h3>
+                            <h1>399 990 ₸</h1>
+                            <a href="{{ tovar.get_absolute_url2 }}">Заказать</a>
+                        </div>
+
+                    </div>
+                    <button class="tovar-scroll-btns" id="tovarscrollbtn2"><i class="fa-solid fa-arrow-right"></i></button>
+                {% endfor %}
+                </div>
+            </div>
+
+        </section>
+        <section class="mobile-flex justify-between gap-15 tovar-scroll-handle">
+
+            {% for tovar in tovar %}
+                <a href="{{ tovar.get_absolute_url }}" class="remove-mobile-background">
+                        <div class="one-type-tovar center">
+                            <img src="{{ tovar.poster.url }}" alt="">
+                            <h3>{{ tovar.title }}</h3>
+                            <p>Артикул: M11111111</p>
+                            <div class="prices-in-card">
+                                <h2>{{ tovar.price }} ₸</h2>
+                            </div>
+                            <p class="rassrochka-in-card"><span style="color: #8E8E93;">от 3 до 60 мес   </span> от 10 987 ₸ /мес.</p>
+                        </div>
+                    </a>
+            {% endfor %}
+        </section>
+    {% endblock %}

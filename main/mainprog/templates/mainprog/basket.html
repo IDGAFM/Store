@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+        <div class="min-width-90 display-flex justify-center gap-30 side-bar-and-profile">
+            <aside class="side-bar">
+                <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Мой профиль</a>
+                <a href=""><i class="fa-solid fa-basket-shopping"></i> Моя корзина</a>
+                <a href="{% url 'settings' %}"><i class="fa-solid fa-basket-shopping"></i>Настройки</a>
+                <a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Выйти</a>
+            </aside>
+            <section class="not-mobile">
+                <h1 style="font-weight: 100;">Ваша корзина</h1>
+
+                    <div class="display-grid one-type-tovary">
+                    {% if cart_items %}
+                    {% for cart_item in cart_items %}
+                            <div class="one-type-tovar center">
+                            <a href="{{ cart_item.product.get_absolute_url }}">
+                                <img src="{{ cart_item.product.poster.url }}" alt="">
+                                <h3>{{ cart_item.product.title }}</h3>
+                                <p>Артикул: M11111111</p>
+                                <div class="prices-in-card">
+                                    <h2>{{ cart_item.product.price }}₸</h2>
+                                </div>
+                                <p>Количество: {{ cart_item.quantity }}</p>
+
+                             <a href="{% url 'remove_from_cart' cart_item.product.id %}" class="remove-from-cart-link">Удалить из корзины</a>
+                             </a>
+
+                            </div>
+
+
+
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+            </section>
+        </div>
+        <section class="mobile-flex justify-between gap-15 tovar-scroll-handle" style="margin-top: 50px;">
+                    {% if cart_items %}
+                    {% for cart_item in cart_items %}
+                        <a href="{{ cart_item.product.get_absolute_url }}">
+                            <div class="one-type-tovar center">
+                                <img src="{{ cart_item.product.poster.url }}" alt="">
+                                <h3>{{ cart_item.product.title }}</h3>
+                                <p>Артикул: M11111111</p>
+                                <div class="prices-in-card">
+                                    <h2>{{ cart_item.product.price }}₸</h2>
+                                </div>
+                                <p>Количество: {{ cart_item.quantity }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                    {% endif %}
+            </section>
+    {% endblock %}

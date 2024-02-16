@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="display-flex align-items-center nav-bar">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/Снимок экрана 2023-03-27 102124 1 (1).png' %}" alt="" class="logo">
+                </a>
+                <div class="not-mobile-flex">
+                <form action="{% url 'searchh' %}" method="get" class="d-flex editContent">
+                <input type="search" placeholder="Введите название..." name="q" class="form-control" required="">
+                <button type="submit" class="btn1 btn">
+                    <span class="fa fa-search" aria-hidden="true"></span>
+                </button>
+                </form>
+                </div>
+                <div class="not-mobile">
+                    <p>Мой город :</p>
+                    <select name="" id="">
+                        <option value="Astana">Астана</option>
+                        <option value="Almaty">Алматы</option>
+                    </select>
+                </div>
+                <div class="not-mobile-flex align-items-center gap-10 authorization-links">
+                    <i class="fa-solid fa-user fa-2xl"></i>
+                    <a href=" ">Вход</a>
+                    <i class="fa-solid fa-slash fa-rotate-90 fa-lg"></i>
+                    <a href="">Регистрация</a>
+                </div>
+                <div class="mobile-flex">
+                    <i class="fa-solid fa-x fa-xl" id="x"></i>
+                    <i class="fa-solid fa-bars fa-xl" id="bars"></i>
+                </div>
+            </div>
+            <div class="min-width-80 mobile padding-top-bottom-20 mobile-menu">
+                <div class="display-flex justify-between gap-10 nav-links-mobile">
+                    <a href="./authorization.html" class="center"><i class="fa-solid fa-user"></i> Войти</a>
+                    <a href="./registration.html" class="center"><i class="fa-solid fa-users"></i> Регистрация</a>
+                </div>
+                <div class="display-flex mobile-search center">
+                    <input type="text" name="" id="" placeholder="Поиск товара">
+                    <button class="center"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <p>Мой город :</p>
+                <select name="" id="">
+                    <option value="Astana">Астана</option>
+                    <option value="Almaty">Алматы</option>
+                </select>
+                <p class="margin-top-bottom">Возможно вас интересуют</p>
+                <div class="display-flex align-items-center justify-between wrap nav-links-mobile">
+                    <a href="./companies.html"><i class="fa-solid fa-mobile fa-xl"></i> Телефоны</a>
+                    <a href="./companies.html"><i class="fa-solid fa-laptop fa-xl"></i> Ноутбуки</a>
+                    <a href="./companies.html"><i class="fa-solid fa-tablet fa-xl"></i> Планшеты</a>
+                    <a href="./companies.html"><i class="fa-brands fa-playstation fa-xl"></i> Приставки</a>
+                </div>
+                <div class="padding-top-bottom-20 contacts-nav">
+                    <a href="#footer" id="contactsnav"><i class="fa-solid fa-phone-volume fa-shake fa-xl"></i> Контакты</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8f0c855a91.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="display-flex align-items-center nav-bar">
+                <a href="./index.html">
+                    <img src="./img/Снимок экрана 2023-03-27 102124 1 (1).png" alt="" class="logo">
+                </a>
+                <div class="not-mobile-flex">
+                    <input type="text" name="" id="" placeholder="Поиск товара">
+                    <button class="center"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="not-mobile">
+                    <p>Мой город :</p>
+                    <select name="" id="">
+                        <option value="Astana">Астана</option>
+                        <option value="Almaty">Алматы</option>
+                    </select>
+                </div>
+                <div class="not-mobile-flex align-items-center gap-10 authorization-links">
+                    <i class="fa-solid fa-user fa-2xl"></i>
+                    <a href="">Вход</a>
+                    <i class="fa-solid fa-slash fa-rotate-90 fa-lg"></i>
+                    <a href="./registration.html">Регистрация</a>
+                </div>
+                <div class="mobile-flex">
+                    <i class="fa-solid fa-x fa-xl" id="x"></i>
+                    <i class="fa-solid fa-bars fa-xl" id="bars"></i>
+                </div>
+            </div>
+            <div class="min-width-80 mobile padding-top-bottom-20 mobile-menu">
+                <div class="display-flex justify-between gap-10 nav-links-mobile">
+                    <a href="" class="center"><i class="fa-solid fa-user"></i> Войти</a>
+                    <a href="./registration.html" class="center"><i class="fa-solid fa-users"></i> Регистрация</a>
+                </div>
+                <div class="display-flex mobile-search center">
+                    <input type="text" name="" id="" placeholder="Поиск товара">
+                    <button class="center"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <p>Мой город :</p>
+                <select name="" id="">
+                    <option value="Astana">Астана</option>
+                    <option value="Almaty">Алматы</option>
+                </select>
+                <p class="margin-top-bottom">Возможно вас интересуют</p>
+                <div class="display-flex align-items-center justify-between wrap nav-links-mobile">
+                    <a href="./companies.html"><i class="fa-solid fa-mobile fa-xl"></i> Телефоны</a>
+                    <a href="./companies.html"><i class="fa-solid fa-laptop fa-xl"></i> Ноутбуки</a>
+                    <a href="./companies.html"><i class="fa-solid fa-tablet fa-xl"></i> Планшеты</a>
+                    <a href="./companies.html"><i class="fa-brands fa-playstation fa-xl"></i> Приставки</a>
+                </div>
+                <div class="padding-top-bottom-20 contacts-nav">
+                    <a href="#footer" id="contactsnav"><i class="fa-solid fa-phone-volume fa-shake fa-xl"></i> Контакты</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="authorization-form">
+            <form action="">
+                <h1>Авторизация</h1>
+                <p class="center" style="color: #999;">Личный кабинет AITU-shop позволит Вам управлять бонусами и получать персональные предложения.</p>
+                <input type="text" placeholder="Введите свою почту или номер телефона">
+                <input type="password" placeholder="Введите пароль">
+                <p>Забыли <a href=""> пароль ?</a></p>
+                <input type="submit" value="Продолжить">
+                <p class="center min-width-80" style="color: #999;">или нажмите на кнопку ниже для быстрого входа с Google или 
+                    Facebook если активировали одну из этих функций ранее</p>
+                <div class="display-flex justify-center gap-50 social-networks-authorization">
+                    <a href="" id="google">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="padding-top-bottom" id="footer">
+        <div class="min-width-90 display-flex justify-between align-items-center mobile-footer">
+            <div class="footer-container">
+                <h2>О проекте</h2>
+                <p style="border-bottom:  0.3px solid #000000 ; padding-bottom: 5px;">С нами сотрудничают более 10.000 магазинов по всем регионам Казахстана.
+                    Наша задача — помочь подобрать и купить нужную модель по лучшей цене в интернет-магазинах.</p>
+                <p>UX/UI Designer - Камиль, Аманияз</p>
+                <p>Frontend Developer - Аманияз</p>
+                <p>Backend - Developer - Маден</p>
+                <div class="display-flex align-items-center gap-15 whatsapp-link-mobile">
+                    <a href="" class="whatsapp-link display-flex align-items-center justify-center">
+                        <span>
+                            <i class="fa fa-brands fa-whatsapp" style="color: #40C351; font-size: 20px;"></i>
+                        </span>
+                        Написать в WhatsApp
+                    </a>
+                    <p>если есть вопросы пишите- <a href="" style="color: #007BFF;">support@aitushop.kz</a></p>
+                </div>
+                <p>© AITUSHOP; po2207k</p>
+            </div>
+            <div class="footer-container right">
+                <a href="./index.html"><img src="./img/Снимок экрана 2023-03-27 102124 1 (1).png" alt=""></a>
+                <p class="display-flex align-items-center gap-15 justify-right social-networks">Мы в социальных сетях : 
+                    <a href="">
+                        <i class="fa fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-brands fa-youtube"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./scripts.js"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/8f0c855a91.js" crossorigin="anonymous"></script>
+</head>
+<body>
+                {% include 'include/header.html' %}
+
+    <main>
+    {% block content %} {% endblock %}
+    </main>
+    <footer class="padding-top-bottom" id="footer">
+        <div class="min-width-90 display-flex justify-between align-items-center mobile-footer">
+            <div class="footer-container">
+                <h2>О проекте</h2>
+                <p style="border-bottom:  0.3px solid #000000 ; padding-bottom: 5px;">С нами сотрудничают более 10.000 магазинов по всем регионам Казахстана.
+                    Наша задача — помочь подобрать и купить нужную модель по лучшей цене в интернет-магазинах.</p>
+                <p>UX/UI Designer - Камиль, Аманияз</p>
+                <p>Frontend Developer - Аманияз</p>
+                <p>Backend - Developer - Диас , Маден</p>
+                <div class="display-flex align-items-center gap-15 whatsapp-link-mobile">
+                    <a href="https://api.whatsapp.com/send?phone=77028557977" class="whatsapp-link display-flex align-items-center justify-center">
+                        <span>
+                            <i class="fa fa-brands fa-whatsapp" style="color: #40C351; font-size: 20px;"></i>
+                        </span>
+                        Написать в WhatsApp
+                    </a>
+                    <p>если есть вопросы пишите- <a href="" style="color: #007BFF;">support@aitushop.kz</a></p>
+                </div>
+                <p>© AITUSHOP; po2207k</p>
+            </div>
+            <div class="footer-container right">
+                <a href="{% url 'home' %}"><img src="{% static 'img/Снимок экрана 2023-03-27 102124 1 (1).png' %}" alt=""></a>
+                <p class="display-flex align-items-center gap-15 justify-right social-networks">Мы в социальных сетях :
+                    <a href="">
+                        <i class="fa fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-brands fa-youtube"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{% static 'js/scripts.js' %}"></script>
+</html>

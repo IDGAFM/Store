@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+        <section class="display-flex justify-between min-width-90 gap-10 mobile-scroll-x" style="padding:20px 5px;">
+            <a href="{% url 'brand' %}?category=ttt" class="remove-mobile-background">
+                <div class="center padding-top-bottom-20 technics">
+                    <img src="{% static 'img/phonesandgadjets.png' %}" alt="">
+                    <p>Телефоны и гаджеты</p>
+                </div>
+            </a>
+            <a href="{% url 'brand' %}?category=ttt3" class="remove-mobile-background">
+                <div class="center padding-top-bottom-20 technics">
+                    <img src="{% static 'img/tv.png' %}" alt="">
+                    <p>Телевизоры</p>
+                </div>
+            </a>
+            <a href="{% url 'brand' %}?category=ttt2" class="remove-mobile-background">
+                <div class="center padding-top-bottom-20 technics">
+                    <img src="{% static 'img/computers.png' %}" alt="">
+                    <p>Компьютеры и ноутбуки</p>
+                </div>
+            </a>
+            <a href="{% url 'brand' %}?category=ttt4" class="remove-mobile-background">
+                <div class="center padding-top-bottom-20 technics">
+                    <img src="{% static 'img/bitovyha.png' %}" alt="">
+                    <p>Бытовая техника</p>
+                </div>
+            </a>
+            <a href="{% url 'brand' %}?category=tt5" class="remove-mobile-background">
+                <div class="center padding-top-bottom-20 technics">
+                    <img src="{% static 'img/hometovar.png' %}" alt="">
+                    <p>Товары для дома</p>
+                </div>
+            </a>
+        </section>
+        <section class="min-width-90 not-mobile-flex direction-column align-items-center links-container gap-30">
+            <div class="display-flex justify-center gap-30">
+                <div class="display-flex direction-column gap-15">
+                    <a href="./companies.html">
+                        <div style="width: 320px; height: 153px; background-image: url({% static 'img/vstrtechnic 1.png' %});" class="relative select">
+                            <p>Встраиваемая техника</p>
+                        </div>
+                    </a>
+                    <a href="./companies.html">
+                        <div style="width: 320px; height: 153px; background-image: url({% static 'img/drone 1.png' %});" class="relative select">
+                            <p>Дроны</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="{% url 'brand' %}?category=ttt2">
+                    <div style="width: 320px; height: 320px; background-image: url({% static 'img/notebooks 1.png' %});" class="relative select">
+                        <h2>Компьютеры и ноутбуки</h2>
+                    </div>
+                </a>
+                <a href="./companies.html">
+                    <div style="width: 660px; height: 320px; background-image: url({% static 'img/bitovyha3 1.png' %});" class="relative select">
+                        <h1>Бытовая техника</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="display-flex justify-center gap-30">
+                <a href="./companies.html">
+                    <div style="width: 800px; height: 420px; background-image: url({% static 'img/touchpads 1.png' %});" class="relative select">
+                        <h1>Планшеты</h1>
+                    </div>
+                </a>
+                <a href="{% url 'brand' %}">
+                    <div style="width: 525px; height: 420px; background-image: url({% static 'img/selectPhone.jpg' %});" class="relative select">
+                        <h1>Смартфоны</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="display-flex justify-center gap-30">
+                <div class="display-flex direction-column gap-15">
+                    <a href="./companies.html">
+                        <div style="width: 320px; height: 153px; background-image: url({% static 'img/monitor 1.png' %});" class="relative select">
+                            <p>Мониторы</p>
+                        </div>
+                    </a>
+                    <a href="./companies.html">
+                        <div style="width: 320px; height: 153px; background-image: url({% static 'img/photoapparat3 1.png' %});" class="relative select">
+                            <p>Фотокамеры</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="./companies.html">
+                    <div style="width: 320px; height: 320px; background-color: #333333;" class="relative select">
+                        <img src="{% static 'img/Skupka-kompyuternoj 1.png' %}" alt="">
+                        <h2>Комплектующие</h2>
+                    </div>
+                </a>
+                <a href="./companies.html">
+                    <div style="width: 660px; height: 320px; background-image: url({% static 'img/pscontroller 1.png' %});" class="relative select">
+                        <h1>Игровые приставки</h1>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="min-width-90 mobile-flex mobile-select align-items-center links-container gap-30">
+            <div class="display-flex justify-center gap-30">
+                <div class="display-flex direction-column gap-15">
+                    <a href="./companies.html" class="remove-mobile-background">
+                        <div style="width: 260px; height: 122px; background-image: url({% static 'img/vstrtechnic 1.png' %});" class="relative select">
+                            <p>Встраиваемая техника</p>
+                        </div>
+                    </a>
+                    <a href="./companies.html" class="remove-mobile-background">
+                        <div style="width: 260px; height: 122px; background-image: url({% static 'img/drone 1.png' %});" class="relative select">
+                            <p>Дроны</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 260px; height: 260px; background-image: url({% static 'img/notebooks 1.png' %});" class="relative select">
+                        <h2>Компьютеры и ноутбуки</h2>
+                    </div>
+                </a>
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 320px; height: 260px; background-image: url({% static 'img/bitovyha3 1.png' %});" class="relative select">
+                        <h1>Бытовая техника</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="display-flex justify-center gap-30">
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 320px; height: 260px; background-image: url({% static 'img/touchpads 1.png' %});" class="relative select">
+                        <h1>Планшеты</h1>
+                    </div>
+                </a>
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 320px; height: 260px; background-image: url({% static 'img/selectPhone.jpg' %});" class="relative select">
+                        <h1>Смартфоны</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="display-flex justify-center gap-30">
+                <div class="display-flex direction-column gap-15">
+                    <a href="./companies.html" class="remove-mobile-background">
+                        <div style="width: 260px; height: 122px; background-image: url({% static 'img/monitor 1.png' %});" class="relative select">
+                            <p>Мониторы</p>
+                        </div>
+                    </a>
+                    <a href="./companies.html" class="remove-mobile-background">
+                        <div style="width: 260px; height: 122px; background-image: url({% static 'img/photoapparat3 1.png' %});" class="relative select">
+                            <p>Фотокамеры</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 260px; height: 260px; background-color: #333333;" class="relative select">
+                        <img src="{% static 'img/Skupka-kompyuternoj 1.png' %}" alt="">
+                        <h2>Комплектующие</h2>
+                    </div>
+                </a>
+                <a href="./companies.html" class="remove-mobile-background">
+                    <div style="width: 320px; height: 260px; background-image: url({% static 'img/pscontroller 1.png' %});" class="relative select">
+                        <h1>Игровые приставки</h1>
+                    </div>
+                </a>
+            </div>            
+        </section>
+        <section class="products-catalog">
+            <h1 class="center margin-top-bottom" style="color: #666666;">Каталог товаров</h1>
+            <div class="display-flex justify-between padding-top-bottom-20 catalog-mobile" id="catalogs">
+                <div class="catalogs-container" id="firstsidecatalog">
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-mobile"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">Телефон и гаджеты</h2>
+                            <p class="left">Мобильные, Планшеты, Приставки, Powerbank, Смарт часы и браслеты, Action камеры, Наушники, Квадрокоптеры (дроны)</p>
+                        </div>
+                    </div>
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-tv"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">TВ, аудио и видео</h2>
+                            <p class="left">Телевизоры, Мониторы, Подставки, крепления, Медиаплееры и ТВ-тюнеры, Проекторы</p>
+                        </div>
+                    </div>
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-computer"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">Компьютерная техника</h2>
+                            <p class="left">Ноутбуки, Планшеты, Мониторы, ПК, Комплектующие, Приставки, Wi-Fi</p>
+                        </div>
+                    </div>
+                    <button class="change-side-links mobile" id="changesidelinks1"><i class="fa-solid fa-arrow-right fa-xl"></i></button>
+                </div>
+                <div class="catalogs-container" id="secondsidecatalog">
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-toilet"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">Бытовая техника</h2>
+                            <p class="left">Встраиваемая техника, Мелкая бытовая техника, Стиральные машины, Холодильники, Плиты, Вытяжки, Духовки,</p>
+                        </div>
+                    </div>
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-couch"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">Товары для дома</h2>
+                            <p class="left">Сантехника, Ремонт, Посуда, Мебель, Матрасы, Декор, Охрана и умный дом, Зоотовары,</p>
+                        </div>
+                    </div>
+                    <div class="catalog display-flex padding-top-bottom-20">
+                        <i class="fa fa-solid fa-blender"></i>
+                        <div class="catalog-texts">
+                            <h2 class="left">Мелкая бытовая техника</h2>
+                            <p class="left">Кофеварки и кофемашины, Электрочайники, Микроволновки, Миксеры и блендеры, Мясорубки, Соковыжималки, Хлебопечки, Мультиварки,</p>
+                        </div>
+                    </div>
+                    <button class="change-side-links mobile" id="changesidelinks2"><i class="fa-solid fa-arrow-left fa-xl"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="padding-top-bottom-20 question">
+            <h1 class="min-width" style="color: #2C509A;">Как пользоваться сайтом?</h1>
+            <p>AITUSHOP — многофункциональный сервис поиска товаров в интернет-магазинах и сравнения цен. Он охватывает 
+                самые разнообразные категории товаров: электроника, компьютеры, бытовая техника, автотовары, оборудование 
+                для ремонта и строительства, туристическое снаряжение, детские товары и многое другое.</p>
+            <p>Наша задача - помочь покупателю быстро и удобно найти самое выгодное предложение. Для тех, кто определяется 
+                с выбором, в каждом разделе есть подбор по параметрам и возможность сравнить товары между собой. Доступен и 
+                удобный текстовый поиск, позволяющий искать как нужные разделы, так и конкретные товары по названию. А на 
+                странице каждой модели есть подробная информация, которая поможет принять решение</p>
+
+            <p>К системе AITUSHOP подключено более 1000 магазинов, данные по которым постоянно обновляются. Благодаря этому вы 
+                сможете не только выбрать подходящий товар, но и купить его по самым выгодным условиям!</p>
+        </section>
+    {% endblock %}

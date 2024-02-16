@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+        <h1 class="min-wi
+        <div class="min-width-90" >
+            <h1 style="font-weight: 100; color: #231F20; margin-left: 100px" class="tovar-name">{{ view.title }}</h1>
+            <section class="review display-flex align-items-center justify-center gap-50 margin-top-bottom">
+                <div class="display-flex direction-column align-items-center gap-30">
+                    <div class="display-flex align-items-center gap-15">
+                        <button class="buy-tovar-scroll-btn" id="buytovarscrollbtn1"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="buy-tovar-scroll" id="buytovarscroll">
+                            <img src="{{ view.poster.url }}" alt="" id="firstimg">
+                            <img src="{{ view.poster1.url }}" alt="" id="secondimg">
+                            <img src="{{ view.poster2.url }}" alt="" id="thirdimg">
+                        </div>
+                        <button class="buy-tovar-scroll-btn" id="buytovarscrollbtn2"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="display-flex align-items-center justify-center select-image">
+                        {% for view in view.productshots_set.all %}
+
+                        <a href="#firstimg" class="remove-mobile-background">
+                            <img src="{{ view.image.url }}" alt="da">
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="info-and-buy">
+
+
+                    <h1> {{ view.price }}  ₸</h1>
+                    <div class="display-flex gap-30 offer-buttons">
+                        {% if user.is_authenticated %}
+                            <button class="display-flex justify-center align-items-center gap-10">
+                                <a href="{% url 'add_to_cart' %}?product_url={{ view.url }}">
+                                    <span class="display-flex justify-center align-items-center gap-10">
+                                        <i class="fa-solid fa-cart-shopping"></i> В корзину
+                                    </span>
+                                </a>
+                            </button>
+                        {% else %}
+                            <button class="display-flex justify-center align-items-center gap-10">
+                                <span class="display-flex justify-center align-items-center gap-10">
+                                    <a href="{% url 'login' %}">Войдите</a>, чтобы заказать
+                                </span>
+                            </button>
+                        {% endif %}
+                        <button id="offerBtn">
+                            <span class="display-flex justify-center align-items-center gap-10"><i class="fa-solid fa-credit-card"></i> Заказать</span>
+                        </button>
+                    </div>
+                    <div style="margin-top: 50px;  width: 235px">
+
+                        <p> {{ view.descriptions }} </p>
+                        <p> Память: {{ view.storage }} </p>
+                    </div>
+                </div>
+            </section>
+            <div class="add-comment">
+                {% if user.is_authenticated %}
+                <form action="{% url 'add_review' view.id %}" method="post" class="mt-4" id="formReview">
+                    {% csrf_token %}
+                    <input type="hidden" name="parent" id="contactparent" value="">
+                    <div class="form-group editContent">
+                        <label for="contactcomment" class="editContent"></label>
+                        <textarea class="form-control border" rows="5" name="text" id="contactcomment" required=""
+                                  placeholder="ваш текст"></textarea>
+                    </div>
+                    <div class="d-sm-flex">
+                        <div class="col-sm-6 form-group p-0 editContent">
+                            <label for="contactusername" class="editContent"></label>
+                            <input type="text" class="form-control border" name="name" id="contactusername" required=""
+                                   placeholder="Ваше имя" value="{{ user.username }}" readonly>
+                        </div>
+                        <div class="col-sm-6 form-group ml-sm-3 editContent">
+                            <label for="contactemail" class="editContent"></label>
+                            <input type="text" class="form-control border" name="email" id="contactemail" placeholder="email"
+                                   required="" value="{{ user.email }} " >
+                        </div>
+                    </div>
+                    <input type="submit" value="Отправить">
+                </form>
+
+                    {% else %}
+                    <a href="{% url 'login' %}">Войдите</a> чтобы оставить отзыв
+                {% endif %}
+            </div>
+            <div class="private-data" id="offercard">
+                <i class="fa-solid fa-x fa-xl" id="closeOfferCard"></i>
+                <form action="">
+                    <input type="text" placeholder="Введите ваш город*" required>
+                    <input type="text" placeholder="Улица, дом, квартира*" required>
+                    <input type="tel" name="" id="" placeholder="+7 777 777 7777">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="text" placeholder="Фамилия" required>
+                    <input type="submit" value="Подтвердить">
+                </form>
+            </div>
+            <div class="comments display-flex direction-column gap-30">
+                {% for review in view.get_review %}
+
+                <div class="comment display-flex direction-column gap-15">
+
+                    <h1>{{ review.name }}</h1>
+                    <p>
+                        {{ review.text }} <br> <br>
+                 <a href="#formReview"
+                       onclick="addReview('{{ review.name }}', '{{ review.id }}')">Ответить</a>
+                    </p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+    {% endblock %}

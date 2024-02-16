@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+
+        <div class="authorization-form">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h1>Авторизация</h1>
+                <p class="center" style="color: #999;">Личный кабинет AITU-shop позволит Вам управлять бонусами и получать персональные предложения.</p>
+                {{ form.non_field_errors }}
+                {% for field in form.visible_fields %}
+                    {{ field.errors }}
+                    {{ field.as_widget }}
+                {% endfor %}
+                <p>Забыли <a href=""> пароль ?</a></p>
+                <input type="submit" value="Продолжить">
+                <p class="center min-width-80" style="color: #999;">или нажмите на кнопку ниже для быстрого входа с Google или Facebook, если активировали одну из этих функций ранее</p>
+                <div class="display-flex justify-center gap-50 social-networks-authorization">
+                    <a href="" id="google">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    {% endblock %}
