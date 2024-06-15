@@ -10,4 +10,4 @@ to launch the app
 
 3 after downloading the packages, you need to open the main folder, write "cd main" in the console
 
-4 start the "python" server manage.py runserver"
+4 start the server "python manage.py runserver"
