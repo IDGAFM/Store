@@ -43,6 +43,6 @@
 
 ## 🔗 Автор
 
-**IDGAF F**  
+**Maden Tynbayev**  
 📍 Astana, Kazakhstan  
 [GitHub](https://github.com/IDGAFM)
